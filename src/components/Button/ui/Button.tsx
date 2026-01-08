@@ -1,0 +1,72 @@
+'use client';
+
+import { Button as BaseButton, Typography, styled } from '@mui/material';
+import { ButtonVariant } from './interfaces';
+import { buttonsData } from './data';
+
+interface ButtonProps {
+  variantButton: ButtonVariant;
+  size?: 'small' | 'large';
+}
+
+const StyledButton = styled(BaseButton)<ButtonProps>(({ variantButton, theme }) => ({
+  background: variantButton === 'secondary' ? 'transparent' : theme.palette.primary.main,
+  border: variantButton === 'secondary' ? `1px solid ${theme.palette.primary.main}` : 'none',
+  color:
+    variantButton === 'secondary'
+      ? theme.palette.primary.main
+      : theme.palette.secondary.contrastText,
+  '&:hover': {
+    background: variantButton === 'secondary' ? 'transparent' : '#e3303c',
+    boxShadow: variantButton === 'secondary' ? '0px 0px 5px 0px' : 'none',
+  },
+  '&:active': {
+    background: variantButton === 'secondary' ? 'transparent' : '#cf2d38',
+    boxShadow: variantButton === 'secondary' ? '0px 0px 10px 0px' : 'none',
+  },
+}));
+
+const Button = ({ variantButton, size }: ButtonProps) => {
+  const selectedIndex = buttonsData.findIndex((button) => button.variantButton === variantButton);
+  const button = buttonsData[selectedIndex];
+  const { title, mobile, desktop, borderRadius } = button ?? {};
+
+  return (
+    <StyledButton
+      variantButton={variantButton}
+      className={`button-${variantButton}--${size}`}
+      sx={{
+        width: { xs: mobile.width, desktop: desktop.width },
+        height: { xs: mobile.height, desktop: desktop.height },
+        borderRadius: variantButton !== 'submit' ? borderRadius : 0,
+        borderTopRightRadius: variantButton === 'submit' ? borderRadius : 'none',
+        borderBottomRightRadius: variantButton === 'submit' ? borderRadius : 'none',
+        [`&.button-${variantButton}--small`]: {
+          width: mobile.width,
+          height: mobile.height,
+        },
+        [`&.button-${variantButton}--large`]: {
+          width: desktop.width,
+          height: desktop.height,
+        },
+        [`&.button-${variantButton}--small > span`]: {
+          fontSize: mobile.fontSize,
+        },
+        [`&.button-${variantButton}--large > span`]: {
+          fontSize: desktop.fontSize,
+        },
+      }}
+    >
+      <Typography
+        variant="button"
+        sx={{
+          fontSize: { xs: mobile.fontSize, desktop: desktop.fontSize },
+        }}
+      >
+        {title}
+      </Typography>
+    </StyledButton>
+  );
+};
+
+export default Button;
