@@ -7,7 +7,7 @@ interface BreakpointProps {
 export type ButtonVariant = 'primary' | 'contact' | 'secondary' | 'submit';
 
 export type BaseButtonProps = {
-  variant: ButtonVariant;
+  variantButton: ButtonVariant;
   title: string;
   borderRadius: string;
   mobile: BreakpointProps;
