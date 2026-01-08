@@ -52,6 +52,13 @@ const theme = createTheme({
       letterSpacing: 0,
       textTransform: 'none',
     },
+    button: {
+      fontFamily: '"Roboto", "Arial", sans-serif',
+      fontWeight: 500,
+      lineHeight: '100%',
+      letterSpacing: 0,
+      textTransform: 'uppercase',
+    },
   },
   breakpoints: {
     values: {
