@@ -39,16 +39,6 @@ const theme = createTheme({
     body1: {
       fontFamily: '"Roboto", "Arial", sans-serif',
       fontSize: '0.875rem',
-      fontWeight: 300,
-      lineHeight: '130%',
-      letterSpacing: 0,
-      textTransform: 'none',
-    },
-    body2: {
-      fontFamily: '"Roboto", "Arial", sans-serif',
-      fontSize: '0.875rem',
-      fontWeight: 400,
-      lineHeight: '120%',
       letterSpacing: 0,
       textTransform: 'none',
     },
