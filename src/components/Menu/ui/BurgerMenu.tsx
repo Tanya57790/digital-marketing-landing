@@ -1,10 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { styled, useTheme, Typography as ListItem, Drawer, Divider } from '@mui/material';
+import { styled, useTheme, Drawer } from '@mui/material';
 import MenuIcon from './MenuIcon';
-import { menuItem } from './data';
+import MenuLink from './MenuLink';
 
 interface MenuProps {
   toggleDrawer: (newOpen: boolean) => () => void;
@@ -21,24 +20,6 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     justifyContent: 'flex-start',
     padding: '20px 10px 0px 10px',
     background: theme.palette.secondary.contrastText,
-  },
-}));
-
-const List = styled('ul')(({ theme }) => ({
-  position: 'absolute',
-  left: 0,
-  width: '100%',
-  padding: theme.spacing(1.5, 0, 0, 0),
-}));
-
-const StyledLink = styled(Link)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  textDecoration: 'none',
-  '&:hover': {
-    color: theme.palette.primary.main,
-  },
-  '&:active': {
-    color: '#c82b36',
   },
 }));
 
@@ -62,27 +43,16 @@ const BurgerMenu = ({ toggleDrawer, onClose, open }: MenuProps) => {
           keepMounted: true,
         }}
       >
-        <List>
-          <Divider />
-          {menuItem.map((item) => {
-            return (
-              <StyledLink key={item.id} href="#">
-                <ListItem
-                  variant="body1"
-                  sx={{
-                    padding: theme.spacing(1.5, 0, 1.5, 2.5),
-                    listStyleType: 'none',
-                    lineHeight: '100%',
-                    fontWeight: 400,
-                  }}
-                >
-                  {item.name}
-                </ListItem>
-                <Divider />
-              </StyledLink>
-            );
-          })}
-        </List>
+        <MenuLink
+          variant="mobileLink"
+          spacingItem={theme.spacing(1.5, 0, 1.5, 2.5)}
+          sx={{
+            position: 'absolute',
+            left: 0,
+            width: '100%',
+            paddingTop: theme.spacing(3),
+          }}
+        />
         <MenuIcon onClick={toggleDrawer(!open)} variant="cross" />
       </StyledDrawer>
     </>
