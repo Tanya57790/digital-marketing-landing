@@ -1,10 +1,11 @@
 'use client';
 
-import { styled, useTheme } from '@mui/material';
+import { styled, useTheme, SxProps, Theme } from '@mui/material';
 
 interface MenuIconProps {
   variant: 'burger' | 'cross';
   onClick?: () => void;
+  sx?: SxProps<Theme>;
 }
 
 const StyledIcon = styled('svg')(({ theme }) => ({
@@ -14,7 +15,7 @@ const StyledIcon = styled('svg')(({ theme }) => ({
   padding: theme.spacing(0, 2, 0, 0),
 }));
 
-const MenuIcon = ({ variant, onClick }: MenuIconProps) => {
+const MenuIcon = ({ variant, onClick, sx }: MenuIconProps) => {
   const theme = useTheme();
 
   return (
@@ -22,6 +23,7 @@ const MenuIcon = ({ variant, onClick }: MenuIconProps) => {
       {variant === 'burger' && (
         <StyledIcon
           onClick={onClick}
+          sx={sx}
           width="25"
           height="16"
           viewBox="0 0 25 16"
