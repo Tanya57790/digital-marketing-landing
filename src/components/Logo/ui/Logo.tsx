@@ -10,7 +10,7 @@ interface LogoProps {
 const LogoContainer = styled('div', {
   shouldForwardProp: (prop) => prop !== 'variant',
 })<LogoProps>(({ variant = 'header', theme }) => ({
-  position: 'absolute',
+  position: 'relative',
   width: variant === 'header' ? '150px' : '180px',
   height: variant === 'header' ? '23px' : '28px',
   color: theme.palette.secondary.contrastText,
