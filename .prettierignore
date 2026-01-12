@@ -40,3 +40,4 @@ next-env.d.ts
 debug-storybook.log
 *.html
 *.css
+*.scss
