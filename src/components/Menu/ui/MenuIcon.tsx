@@ -8,12 +8,11 @@ interface MenuIconProps {
   sx?: SxProps<Theme>;
 }
 
-const StyledIcon = styled('svg')(({ theme }) => ({
+const StyledIcon = styled('svg')({
   cursor: 'pointer',
-  position: 'absolute',
+  position: 'relative',
   right: 0,
-  padding: theme.spacing(0, 2, 0, 0),
-}));
+});
 
 const MenuIcon = ({ variant, onClick, sx }: MenuIconProps) => {
   const theme = useTheme();
@@ -38,7 +37,7 @@ const MenuIcon = ({ variant, onClick, sx }: MenuIconProps) => {
       )}
       {variant === 'cross' && (
         <StyledIcon
-          sx={{ top: '20px' }}
+          sx={{ position: 'absolute', top: '20px', right: '10px' }}
           onClick={onClick}
           width="25"
           height="16"
