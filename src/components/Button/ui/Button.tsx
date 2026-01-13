@@ -9,7 +9,9 @@ interface ButtonProps {
   size?: 'small' | 'large';
 }
 
-const StyledButton = styled(BaseButton)<ButtonProps>(({ variantButton, theme }) => ({
+const StyledButton = styled(BaseButton, {
+  shouldForwardProp: (prop) => prop !== 'variantButton',
+})<ButtonProps>(({ variantButton, theme }) => ({
   background: variantButton === 'secondary' ? 'transparent' : theme.palette.primary.main,
   border: variantButton === 'secondary' ? `1px solid ${theme.palette.primary.main}` : 'none',
   color:
