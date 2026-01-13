@@ -11,8 +11,8 @@ const LogoContainer = styled('div', {
   shouldForwardProp: (prop) => prop !== 'variant',
 })<LogoProps>(({ variant = 'header', theme }) => ({
   position: 'relative',
-  width: variant === 'header' ? '150px' : '180px',
-  height: variant === 'header' ? '23px' : '28px',
+  width: variant === 'header' ? '151px' : '180px',
+  height: variant === 'header' ? '24px' : '28px',
   color: theme.palette.secondary.contrastText,
   stroke: theme.palette.primary.contrastText,
 
@@ -41,8 +41,8 @@ const LogoContainer = styled('div', {
   },
 
   '&.logo-icon--small': {
-    width: variant === 'header' ? '150px' : '180px',
-    height: variant === 'header' ? '23px' : '28px',
+    width: variant === 'header' ? '151px' : '181px',
+    height: variant === 'header' ? '24px' : '29px',
   },
 
   '&.logo-icon--medium': {
@@ -51,8 +51,8 @@ const LogoContainer = styled('div', {
   },
 
   '&.logo-icon--large': {
-    width: variant === 'header' ? '200px' : '254px',
-    height: variant === 'header' ? '31px' : '39px',
+    width: variant === 'header' ? '201px' : '255px',
+    height: variant === 'header' ? '32px' : '40px',
   },
 
   [theme.breakpoints.up('sm')]: {
@@ -61,8 +61,8 @@ const LogoContainer = styled('div', {
   },
 
   [theme.breakpoints.up('desktop')]: {
-    width: variant === 'header' ? '200px' : '254px',
-    height: variant === 'header' ? '31px' : '39px',
+    width: variant === 'header' ? '201px' : '255px',
+    height: variant === 'header' ? '32px' : '40px',
   },
 }));
 
