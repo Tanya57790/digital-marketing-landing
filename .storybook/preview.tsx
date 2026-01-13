@@ -1,9 +1,11 @@
 import React from 'react';
+import { styled } from '@mui/material';
 import type { Preview } from '@storybook/nextjs-vite';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { theme } from '../src/theme';
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
+import '@fontsource/roboto-condensed/700.css';
 
 const customViewports = {
   mobile1: MINIMAL_VIEWPORTS.mobile1,
@@ -18,11 +20,28 @@ const customViewports = {
   },
 };
 
+const Container = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    padding: '0px 20px',
+  },
+  [theme.breakpoints.up('md')]: {
+    padding: '0px 30px',
+  },
+  [theme.breakpoints.up('lg')]: {
+    padding: '0px 50px',
+  },
+  [theme.breakpoints.up(1920)]: {
+    padding: '0px 60px',
+  },
+}));
+
 const withThemeProvider = (Story, context) => {
   return (
     <EmotionThemeProvider theme={theme}>
       <MuiThemeProvider theme={theme}>
-        <Story {...context} />
+        <Container>
+          <Story {...context} />
+        </Container>
       </MuiThemeProvider>
     </EmotionThemeProvider>
   );
