@@ -11,10 +11,20 @@ interface IconProps {
 }
 
 const sizes = {
-  heroGap: { xs: '20px', sm: '30px', lg: '30px 50px', desktop: '40px 60px' },
+  heroPadding: {
+    xs: '20px 0px',
+    sm: '30px 0px',
+    md: '20px 0px',
+    lg: '50px 0px',
+    desktop: '40px 0px',
+  },
+  heroMargin: { desktop: '0 -17px' },
+  heroGap: { xs: '20px 34px', sm: '20px 30px', lg: '30px 50px', xl: '40px 60px' },
   footerGap: { xs: '40px' },
   heroColumns: {
     xs: '1fr 1fr 1fr',
+    md: '250px 250px 250px',
+    xl: '350px 350px 350px',
     desktop: 'repeat(auto-fit, minmax(250px, 1fr))',
   },
   footerColumns: { xs: '40px 40px 40px' },
@@ -23,7 +33,7 @@ const sizes = {
 };
 
 const Icon = ({ variant }: IconProps) => {
-  const { heroGap, footerGap, heroColumns, footerColumns, heroWidth, footerWidth } = sizes;
+  const { heroGap, footerGap, heroColumns, footerColumns, ...otherStyles } = sizes;
   const items = useMemo(() => (variant === 'hero' ? heroData : footerData), [variant]);
 
   return (
@@ -33,7 +43,10 @@ const Icon = ({ variant }: IconProps) => {
         gap: variant === 'hero' ? heroGap : footerGap,
         gridTemplateColumns: variant === 'hero' ? heroColumns : footerColumns,
         gridAutoFlow: { desktop: 'column' },
-        width: variant === 'hero' ? heroWidth : footerWidth,
+        width: variant === 'hero' ? otherStyles.heroWidth : otherStyles.footerWidth,
+        margin: variant === 'hero' ? otherStyles.heroMargin : '',
+        padding: variant === 'hero' ? otherStyles.heroPadding : '',
+        justifyContent: variant === 'hero' ? { md: 'space-between' } : '',
         justifyItems: 'center',
         alignItems: 'center',
       }}
