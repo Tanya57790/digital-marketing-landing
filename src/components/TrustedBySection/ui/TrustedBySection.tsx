@@ -22,6 +22,9 @@ const TrustedBySection = () => {
         sx={{ margin: { xs: '0 -20px', md: '0 -30px', lg: '0 -50px', desktop: '0 -60px' } }}
       />
       <Icon variant="hero" />
+      <Divider
+        sx={{ margin: { xs: '0 -20px', md: '0 -30px', lg: '0 -50px', desktop: '0 -60px' } }}
+      />
     </Box>
   );
 };
