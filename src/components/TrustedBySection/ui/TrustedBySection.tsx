@@ -8,7 +8,14 @@ const TrustedBySection = () => {
     <Box
       sx={{
         position: 'relative',
-        top: { xs: '39px', sm: '60px', md: '215px', lg: '181px', xl: '264px', desktop: '150px' },
+        marginTop: {
+          xs: '39px',
+          sm: '60px',
+          md: '215px',
+          lg: '181px',
+          xl: '264px',
+          desktop: '150px',
+        },
       }}
     >
       <Divider
