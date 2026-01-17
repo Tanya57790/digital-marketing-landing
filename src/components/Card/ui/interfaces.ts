@@ -29,3 +29,10 @@ export interface CardTitleProps {
   features: StylesProps;
   subscribe: StylesProps;
 }
+
+export interface CardTextProps {
+  id?: number;
+  accent: string;
+  firstPart?: string[];
+  lastPart?: string[];
+}
