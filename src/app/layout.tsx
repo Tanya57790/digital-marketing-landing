@@ -4,6 +4,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 import { ThemeProvider, CssBaseline, Container } from '@mui/material';
 import { theme } from '@/theme';
 import '@fontsource/roboto-condensed/700.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/300.css';
 
 export const metadata: Metadata = {
   title: 'Boost your email marketing results!',
