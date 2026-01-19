@@ -11,6 +11,12 @@ const StyledInput = styled('input')(({ theme }) => ({
   fontSize: '14px',
   fontFamily: '"Roboto", "Arial", sans-serif',
   fontWeight: 300,
+  [theme.breakpoints.up('sm')]: {
+    width: '234px',
+  },
+  [theme.breakpoints.up('md')]: {
+    width: '272px',
+  },
   [theme.breakpoints.up('desktop')]: {
     width: '732px',
     paddingLeft: '30px',
