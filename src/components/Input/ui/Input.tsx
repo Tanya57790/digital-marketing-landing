@@ -17,6 +17,12 @@ const StyledInput = styled('input')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     width: '272px',
   },
+  [theme.breakpoints.up('lg')]: {
+    width: '350px',
+  },
+  [theme.breakpoints.up('xl')]: {
+    width: '550px',
+  },
   [theme.breakpoints.up('desktop')]: {
     width: '732px',
     paddingLeft: '30px',
