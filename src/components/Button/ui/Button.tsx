@@ -35,6 +35,7 @@ const Button = ({ variantButton, size }: ButtonProps) => {
 
   return (
     <StyledButton
+      type={variantButton === 'submit' ? 'submit' : 'button'}
       variantButton={variantButton}
       className={`button-${variantButton}--${size}`}
       sx={{
