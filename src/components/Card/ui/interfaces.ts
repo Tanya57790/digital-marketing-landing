@@ -1,34 +1,27 @@
-export type CardVariant = {
-  variantCard: 'support' | 'features' | 'subscribe';
-};
+type CardVariant = 'support' | 'features' | 'subscribe';
 
-type SliceIndex = {
-  start: number;
-  end: number;
-};
+export interface CardVariantProps {
+  variantCard: CardVariant;
+}
 
-export type ResponsiveWidth = {
-  sm: string;
-  md: string;
-  lg: string;
-  xl: string;
-  desktop: string;
-};
+type SliceRange = { start: number; end: number };
 
-interface StylesProps {
+type ResponsiveValue = Partial<Record<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'desktop', string>>;
+
+export interface ResponsiveProps {
+  responsiveWidth: ResponsiveValue;
+}
+
+interface TitleSection {
   title: string;
-  firstPartSlice: SliceIndex;
-  lastPartSlice?: SliceIndex;
-  responsiveWidth: ResponsiveWidth;
+  firstPartSlice: SliceRange;
+  lastPartSlice?: SliceRange;
+  responsiveWidth: ResponsiveValue;
   subtitle?: string;
   accentIndex: number;
 }
 
-export interface CardTitleProps {
-  support: StylesProps;
-  features: StylesProps;
-  subscribe: StylesProps;
-}
+export type CardConfigTitle = Record<CardVariant, TitleSection>;
 
 export interface CardTextProps {
   id?: number;
@@ -36,3 +29,18 @@ export interface CardTextProps {
   firstPart?: string[];
   lastPart?: string[];
 }
+
+export interface CardStylesProps {
+  display: string;
+  justifyContent: ResponsiveValue;
+  flexDirection: ResponsiveValue;
+  whiteSpace: ResponsiveValue;
+  textWidth?: ResponsiveValue;
+  listWidth?: ResponsiveValue;
+  textDirection?: ResponsiveValue;
+  listDirection?: ResponsiveValue;
+  paddingTopText?: ResponsiveValue;
+  gap?: ResponsiveValue;
+}
+
+export type CardsConfig = Record<CardVariant, CardStylesProps>;
