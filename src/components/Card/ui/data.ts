@@ -1,6 +1,6 @@
-import { CardTitleProps, CardTextProps } from './interfaces';
+import { CardsConfig, CardConfigTitle, CardTextProps } from './interfaces';
 
-export const titles: CardTitleProps = {
+export const titles: CardConfigTitle = {
   support: {
     title: 'We are here to help when:',
     firstPartSlice: { start: 0, end: 4 },
@@ -11,14 +11,14 @@ export const titles: CardTitleProps = {
   features: {
     title: 'We take care\n of all your email\n marketing activities',
     firstPartSlice: { start: 0, end: 1 },
-    lastPartSlice: { start: 4, end: 9 },
-    responsiveWidth: { sm: '230px', md: '400px', lg: '520px', xl: '840px', desktop: '1261px' },
+    lastPartSlice: { start: 3, end: 9 },
+    responsiveWidth: { sm: '230px', md: '550px', lg: '740px', xl: '840px', desktop: '1261px' },
     accentIndex: 1,
   },
   subscribe: {
     title: 'Subscribe\n to L.U.Y.E',
     firstPartSlice: { start: 0, end: 2 },
-    responsiveWidth: { sm: '131px', md: '370px', lg: '470px', xl: '570px', desktop: '597px' },
+    responsiveWidth: { sm: '131px', md: '340px', lg: '470px', xl: '570px', desktop: '597px' },
     subtitle: 'Level Up Your Email Newsletter',
     accentIndex: 2,
   },
@@ -40,6 +40,35 @@ export const featureItems = [
   { id: 5, textItem: 'Deliverability' },
   { id: 6, textItem: 'Automation' },
 ];
+
+export const cardVariantsStyles: CardsConfig = {
+  support: {
+    display: 'flex',
+    justifyContent: { sm: 'space-between' },
+    flexDirection: { xs: 'column', sm: 'row' },
+    whiteSpace: { xs: 'pre-line', sm: 'normal' },
+    listWidth: { xs: '240px', md: '340px', lg: '400px', xl: '520px', desktop: '559px' },
+  },
+  features: {
+    display: 'flex',
+    justifyContent: { sm: 'space-between' },
+    flexDirection: { xs: 'column' },
+    whiteSpace: { xs: 'normal', lg: 'pre-line' },
+    listWidth: { xs: '249px', sm: '160px', xl: '250px', desktop: '279px' },
+    listDirection: { xs: 'column', md: 'row' },
+    textDirection: { xs: 'column', md: 'row', desktop: 'row' },
+    textWidth: { md: '350px', lg: '500px', xl: '600px', desktop: '720px' },
+    paddingTopText: { xs: '10px', md: '20px', desktop: '40px' },
+    gap: { xs: '20px', desktop: '80px' },
+  },
+  subscribe: {
+    display: 'block',
+    justifyContent: { sm: 'space-between' },
+    flexDirection: { xs: 'column', md: 'row' },
+    whiteSpace: { xs: 'normal', xl: 'pre-line' },
+    textWidth: { xs: 'auto', desktop: '898px' },
+  },
+};
 
 export const featuresText: CardTextProps[] = [
   {
@@ -70,8 +99,8 @@ export const subscribeText: CardTextProps = {
   ],
   lastPart: [
     "But here is the thing: it's not just about us promoting our agency services \n(we promise!). ",
-    'In our emails, we share valuable advice and practical tips based \non our own experiences. ',
-    'Our goal is to help you enhance your email marketing \nwithout breaking the bank.\n',
+    'In our emails, we share valuable advice and practical tips based on our own experiences. ',
+    'Our goal is to help you enhance your email marketing without breaking the bank.\n',
   ],
   accent: "Let's join forces and make your emails shine!",
 };
