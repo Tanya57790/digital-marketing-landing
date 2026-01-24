@@ -34,7 +34,7 @@ const SupportSection = () => {
   return (
     <Box>
       <BackgroundImage />
-      <Card variantCard="subscribe" />
+      <Card variantCard="support" />
     </Box>
   );
 };
