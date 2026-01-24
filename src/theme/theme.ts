@@ -36,6 +36,14 @@ const theme = createTheme({
       letterSpacing: 0,
       textTransform: 'uppercase',
     },
+    h2: {
+      fontFamily: '"Roboto Condensed", "Arial", sans-serif',
+      fontSize: '1.25rem',
+      fontWeight: 700,
+      lineHeight: '100%',
+      letterSpacing: 0,
+      textTransform: 'uppercase',
+    },
     body1: {
       fontFamily: '"Roboto", "Arial", sans-serif',
       fontSize: '0.875rem',
