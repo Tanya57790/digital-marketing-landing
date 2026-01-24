@@ -1,6 +1,7 @@
 'use client';
 
 import { styled } from '@mui/material';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 const StyledInput = styled('input')(({ theme }) => ({
   width: '143px',
@@ -33,15 +34,15 @@ const StyledInput = styled('input')(({ theme }) => ({
   },
 }));
 
-const Input = () => {
+const Input = ({ ...props }: UseFormRegisterReturn) => {
   return (
     <StyledInput
       id="email"
-      name="email"
       placeholder="Your Email"
       type="email"
-      max-length="100"
-      required
+      max-length="320"
+      autoComplete="email"
+      {...props}
     />
   );
 };
