@@ -32,6 +32,7 @@ const CardTypography = ({ variantTypography, className, sx, children }: VariantT
         <AccentText
           className={className}
           sx={{
+            fontFamily: '"Roboto", "Arial", sans-serif',
             fontSize: fontSizes,
             fontStyle: {
               xs: className === 'accent-italic' ? 'italic' : 'normal',
