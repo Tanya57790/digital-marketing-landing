@@ -1,11 +1,15 @@
 import React from 'react';
 import { styled } from '@mui/material';
 import type { Preview } from '@storybook/nextjs-vite';
+import { http, HttpResponse } from 'msw';
+import { initialize, mswLoader } from 'msw-storybook-addon';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { theme } from '../src/theme';
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
 import '@fontsource/roboto-condensed/700.css';
+
+initialize();
 
 const customViewports = {
   mobile1: MINIMAL_VIEWPORTS.mobile1,
@@ -51,6 +55,19 @@ export const decorators = [withThemeProvider];
 
 const preview: Preview = {
   parameters: {
+    msw: {
+      handlers: [
+        http.post('api/subscription', async ({ request }) => {
+          const formData = await request.json();
+          console.log('MSW caught:', formData);
+          return HttpResponse.json({
+            success: true,
+            subscriberId: 123,
+            message: 'MSW mock success',
+          });
+        }),
+      ],
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -68,6 +85,7 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+  loaders: [mswLoader],
 };
 
 export default preview;
