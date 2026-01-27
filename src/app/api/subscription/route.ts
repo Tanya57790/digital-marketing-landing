@@ -1,21 +1,15 @@
 'use server';
 
-import { schema, type InferSchema } from '@/lib/subscribe-schema';
-import z, { ZodError } from 'zod';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
+import { createSubscriber } from '@/lib/subscribers';
 
-export async function addSubscriber(formData: InferSchema) {
-  const result = schema.safeParse(formData);
-  if (!result.success) {
-    return {
-      errors: z.treeifyError(result.error as ZodError),
-    };
+export async function POST(request: NextRequest) {
+  try {
+    const formData = await request.json();
+    const result = await createSubscriber(formData);
+    return NextResponse.json(result);
+  } catch (error) {
+    console.error('Server error', error);
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
-  const subscriber = await prisma.subscriber.upsert({
-    where: { email: result.data.email },
-    update: {},
-    create: { email: result.data.email },
-  });
-
-  return { success: true, subscriberId: subscriber.id, message: 'Validation successful' };
 }
