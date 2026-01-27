@@ -4,7 +4,7 @@ import { Box, styled, useTheme, Typography } from '@mui/material';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { schema, type InferSchema } from '@/lib/subscribe-schema';
-import { addSubscriber } from '@/app/api/subscription/route';
+import { addSubscriber } from '@/lib/addSubscriber';
 import { Input } from '@/components/Input';
 import { Button } from '@/components/Button';
 
