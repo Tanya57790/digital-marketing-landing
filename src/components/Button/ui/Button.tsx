@@ -7,6 +7,7 @@ import { buttonsData } from './data';
 interface ButtonProps {
   variantButton: ButtonVariant;
   size?: 'small' | 'large';
+  disabled?: boolean;
 }
 
 const StyledButton = styled(BaseButton, {
@@ -28,7 +29,7 @@ const StyledButton = styled(BaseButton, {
   },
 }));
 
-const Button = ({ variantButton, size }: ButtonProps) => {
+const Button = ({ variantButton, size, disabled }: ButtonProps) => {
   const selectedIndex = buttonsData.findIndex((button) => button.variantButton === variantButton);
   const button = buttonsData[selectedIndex];
   const { title, mobile, desktop, borderRadius } = button ?? {};
@@ -36,6 +37,7 @@ const Button = ({ variantButton, size }: ButtonProps) => {
   return (
     <StyledButton
       type={variantButton === 'submit' ? 'submit' : 'button'}
+      disabled={disabled}
       variantButton={variantButton}
       className={`button-${variantButton}--${size}`}
       sx={{
