@@ -37,7 +37,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isSubmitting, errors },
   } = useForm<InferSchema>({ resolver: zodResolver(schema) });
 
   const onSubmit: SubmitHandler<InferSchema> = async (data) => {
@@ -63,7 +63,7 @@ const Form = () => {
         </Typography>
         <Box display="flex" paddingBottom="10px">
           <Input {...register('email')} />
-          <Button variantButton="submit" />
+          <Button variantButton="submit" disabled={isSubmitting} />
         </Box>
         {errors.email && (
           <ErrorMessage sx={{ fontSize: responsiveSizes }}>{errors.email.message}</ErrorMessage>
