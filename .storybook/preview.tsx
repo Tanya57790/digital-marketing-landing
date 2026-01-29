@@ -42,12 +42,19 @@ const Container = styled('div')(({ theme }) => ({
 }));
 
 const withThemeProvider = (Story, context) => {
+  const noContainer = context.parameters.noContainer;
   return (
     <EmotionThemeProvider theme={theme}>
       <MuiThemeProvider theme={theme}>
-        <Container>
-          <Story {...context} />
-        </Container>
+        {noContainer ? (
+          <div style={{ padding: 0 }}>
+            <Story {...context} />
+          </div>
+        ) : (
+          <Container>
+            <Story {...context} />
+          </Container>
+        )}
       </MuiThemeProvider>
     </EmotionThemeProvider>
   );
