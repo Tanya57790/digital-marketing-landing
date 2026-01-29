@@ -9,7 +9,7 @@ type VariantTypography = {
   children: React.ReactNode;
 };
 
-const fontSizes = { lg: '16px', xl: '20px', desktop: '24px' };
+const fontSizes = { xs: '14px', lg: '16px', xl: '20px', desktop: '24px' };
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.secondary.contrastText,
