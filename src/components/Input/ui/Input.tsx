@@ -10,6 +10,7 @@ const StyledInput = styled('input')(({ theme }) => ({
   borderBottomLeftRadius: '5px',
   paddingLeft: '10px',
   fontSize: '14px',
+  boxSizing: 'border-box',
   fontFamily: '"Roboto", "Arial", sans-serif',
   fontWeight: 300,
   [theme.breakpoints.up('sm')]: {
