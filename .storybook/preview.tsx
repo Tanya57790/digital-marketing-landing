@@ -16,6 +16,13 @@ initialize();
 const customViewports = {
   mobile1: MINIMAL_VIEWPORTS.mobile1,
   tablet: MINIMAL_VIEWPORTS.tablet,
+  tabletLarge: {
+    name: 'tablet Large',
+    styles: {
+      width: '900px',
+      height: '1112px',
+    },
+  },
   desktop: MINIMAL_VIEWPORTS.desktop,
   desktopLarge: {
     name: 'Desktop Large',
