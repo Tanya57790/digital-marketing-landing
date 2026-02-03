@@ -14,8 +14,8 @@ const PortfolioImage = () => {
     props: { srcSet: mobileSrcSet, ...restMobile },
   } = getImageProps({
     src: '/assets/images/commercial-cards_m.png',
-    width: 258,
-    height: 280,
+    width: 280,
+    height: 258,
     ...common,
   });
   const {
