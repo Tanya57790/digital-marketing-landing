@@ -5,11 +5,13 @@ import { supportItems, featureItems } from './data';
 import type { CardVariantProps } from './interfaces';
 import { cardVariantsStyles } from './data';
 
-const StyledList = styled(List)(({ theme }) => ({
+const StyledList = styled(List, {
+  shouldForwardProp: (prop) => prop !== 'variantCard',
+})<CardVariantProps>(({ theme, variantCard }) => ({
   display: 'grid',
   listStyle: 'disc',
-  gap: '23.3px',
   marginTop: '4px',
+  gap: variantCard === 'support' ? '23.3px' : '15px',
   paddingLeft: '15px',
   [theme.breakpoints.up('desktop')]: {
     gap: '15px',
@@ -39,7 +41,11 @@ const CardList = ({ variantCard }: CardVariantProps) => {
 
   return (
     <StyledList
-      sx={{ marginRight: { desktop: variantCard === 'support' ? '110px' : '' }, width: listWidth }}
+      variantCard={variantCard}
+      sx={{
+        marginRight: { desktop: variantCard === 'support' ? '110px' : '' },
+        width: listWidth,
+      }}
     >
       {listItems.map((item) => {
         return (
@@ -52,6 +58,7 @@ const CardList = ({ variantCard }: CardVariantProps) => {
             <Typography
               variant="body1"
               sx={{
+                fontWeight: variantCard === 'features' ? 300 : 400,
                 color: theme.palette.secondary.contrastText,
                 lineHeight: '120%',
                 marginLeft: { desktop: '-3px' },
