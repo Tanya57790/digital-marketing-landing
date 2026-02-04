@@ -13,13 +13,17 @@ const StyledItem = styled(ListItem)(({ theme }) => ({
   display: 'grid',
   justifyContent: 'start',
   alignItems: 'start',
-  gridTemplateColumns: '80px 190px',
+  gridTemplateColumns: '80px 170px',
   paddingLeft: '0px',
+  paddingRight: '0px',
   [theme.breakpoints.up('md')]: {
-    gridTemplateColumns: '100px max-content',
+    gridTemplateColumns: '100px 230px',
+  },
+  [theme.breakpoints.up('lg')]: {
+    gridTemplateColumns: '120px 320px',
   },
   [theme.breakpoints.up('xl')]: {
-    gridTemplateColumns: '120px max-content',
+    gridTemplateColumns: '130px 310px',
   },
   [theme.breakpoints.up('desktop')]: {
     gridTemplateColumns: '130px max-content',
