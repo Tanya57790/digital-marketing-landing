@@ -20,10 +20,6 @@ const BackgroundImage = styled('div')(({ theme }) => ({
     marginLeft: '-30px',
   },
   [theme.breakpoints.up('lg')]: {
-    height: '495px',
-    marginLeft: '-50px',
-  },
-  [theme.breakpoints.up('lg')]: {
     height: '550px',
     marginLeft: '-50px',
   },
