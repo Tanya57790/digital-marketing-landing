@@ -17,6 +17,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   borderRadius: '20px',
   boxSizing: 'border-box',
   backgroundColor: theme.palette.secondary.main,
+  boxShadow: '1px 1px 33px rgba(0, 0, 0, 0.25)',
   [theme.breakpoints.up('sm')]: {
     width: '530px',
     padding: '30px',
