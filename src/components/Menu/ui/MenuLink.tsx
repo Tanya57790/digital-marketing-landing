@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { styled, SxProps, Theme, Typography as ListItem, List, Divider } from '@mui/material';
+import { styled, SxProps, Theme, Typography, ListItem, List, Divider } from '@mui/material';
 import { menuItem } from './data';
 
 interface MenuLinkProps {
@@ -30,19 +30,20 @@ const MenuLink = ({ spacingItem, sx, variant }: MenuLinkProps) => {
       {divider}
       {items.map((item) => {
         return (
-          <StyledLink key={item.id} href="#">
-            <ListItem
-              variant="body1"
-              sx={{
-                fontSize: { xs: '14px', md: '16px', xl: '20px' },
-                padding: spacingItem,
-                lineHeight: '100%',
-              }}
-            >
-              {item.name}
-            </ListItem>
-            {divider}
-          </StyledLink>
+          <ListItem key={item.id} sx={{ padding: spacingItem, width: 'auto' }}>
+            <StyledLink href="#">
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: { xs: '14px', md: '16px', xl: '20px' },
+                  lineHeight: '100%',
+                }}
+              >
+                {item.name}
+              </Typography>
+              {divider}
+            </StyledLink>
+          </ListItem>
         );
       })}
     </List>
