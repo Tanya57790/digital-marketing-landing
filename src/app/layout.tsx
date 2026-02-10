@@ -10,6 +10,8 @@ import '@fontsource/roboto/300.css';
 
 export const metadata: Metadata = {
   title: 'Boost your email marketing results!',
+  description:
+    "Boost your B2C brand's email revenue with proven strategies, exper deliverability support, and inspiring creative campaignes",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
