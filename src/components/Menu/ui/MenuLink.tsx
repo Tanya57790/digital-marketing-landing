@@ -6,7 +6,7 @@ import { menuItem } from './data';
 
 interface MenuLinkProps {
   sx?: SxProps<Theme>;
-  spacingItem?: { md: string; lg: string };
+  spacingItem?: { md: string; lg: string } | string;
   variant: 'mobileLink' | 'desktopLink';
 }
 
