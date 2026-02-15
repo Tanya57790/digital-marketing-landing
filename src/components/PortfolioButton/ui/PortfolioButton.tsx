@@ -5,7 +5,7 @@ import { styled } from '@mui/material';
 type ButtonType = {
   onClick: () => void;
   disabled: boolean;
-  name: string;
+  ariaLabel: string;
   children: React.ReactNode;
 };
 
@@ -33,10 +33,10 @@ const StyledButton = styled('button')(({ theme }) => ({
   },
 }));
 
-const PortfolioButton = ({ onClick, disabled, name, children }: ButtonType) => {
+const PortfolioButton = ({ onClick, disabled, ariaLabel, children }: ButtonType) => {
   return (
     <>
-      <StyledButton onClick={onClick} disabled={disabled} name={name}>
+      <StyledButton onClick={onClick} disabled={disabled} aria-label={ariaLabel}>
         {children}
       </StyledButton>
     </>
