@@ -36,14 +36,14 @@ const PortfolioDescription = () => {
         <PortfolioButton
           onClick={() => setPage(Math.max(1, page - 1))}
           disabled={page === 1}
-          name="button-left"
+          ariaLabel="button-left"
         >
           <Arrow variantArrow="left" />
         </PortfolioButton>
         <PortfolioButton
           onClick={() => setPage(Math.min(totalPages, page + 1))}
           disabled={page === totalPages}
-          name="button-right"
+          ariaLabel="button-right"
         >
           <Arrow variantArrow="right" />
         </PortfolioButton>
