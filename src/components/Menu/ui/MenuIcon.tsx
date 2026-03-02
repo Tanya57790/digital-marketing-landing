@@ -1,6 +1,7 @@
 'use client';
 
-import { styled, useTheme, SxProps, Theme } from '@mui/material';
+import { styled, type Theme, useTheme } from '@mui/material/styles';
+import { SxProps } from '@mui/system';
 
 interface MenuIconProps {
   variant: 'burger' | 'cross';

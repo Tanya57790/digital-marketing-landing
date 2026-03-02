@@ -1,13 +1,14 @@
 'use client';
 
-import { styled, Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoBox } from '@/components/MuiOptimized';
 import CardTitle from './CardTitle';
 import CardList from './CardList';
 import CardText from './CardText';
 import { cardVariantsStyles } from './data';
 import type { CardVariantProps } from './interfaces';
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledBox = styled(MemoBox)(({ theme }) => ({
   position: 'relative',
   top: '30px',
   height: 'auto',
@@ -49,7 +50,7 @@ const Card = ({ variantCard }: CardVariantProps) => {
         flexDirection: flexDirection,
       }}
     >
-      <Box
+      <MemoBox
         sx={{
           display: display,
           gap: '10px',
@@ -60,7 +61,7 @@ const Card = ({ variantCard }: CardVariantProps) => {
       >
         <CardTitle variantCard={variantCard} />
         {variantCard !== 'subscribe' && <CardList variantCard={variantCard} />}
-      </Box>
+      </MemoBox>
       {variantCard !== 'support' && <CardText variantCard={variantCard} />}
     </StyledBox>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Box } from '@mui/material';
+import { MemoBox } from '@/components/MuiOptimized';
 import { HeroProps, FooterProps } from './interfaces';
 import { heroData, footerData } from './data';
 import { useMemo } from 'react';
@@ -37,7 +37,7 @@ const Icon = ({ variant }: IconProps) => {
   const items = useMemo(() => (variant === 'hero' ? heroData : footerData), [variant]);
 
   return (
-    <Box
+    <MemoBox
       sx={{
         display: 'grid',
         gap: variant === 'hero' ? heroGap : footerGap,
@@ -56,7 +56,7 @@ const Icon = ({ variant }: IconProps) => {
         const { size } = item as FooterProps;
 
         return (
-          <Box
+          <MemoBox
             key={item.id}
             sx={{
               position: 'relative',
@@ -92,10 +92,10 @@ const Icon = ({ variant }: IconProps) => {
               alt={`${item?.name.charAt(0).toUpperCase() + item?.name.slice(1)} logo`}
               role="img"
             />
-          </Box>
+          </MemoBox>
         );
       })}
-    </Box>
+    </MemoBox>
   );
 };
 

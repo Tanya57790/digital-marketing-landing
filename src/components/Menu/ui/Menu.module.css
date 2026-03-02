@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    align-items: center;
+    height: 62px;
+    padding: 20px 0px 20px 0px;
+}
+
+@media (min-width: 1920px) {
+  .nav {
+    height: 103px;
+    padding: 30px 0px 30px 0px;
+  }  
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (min-width: 900px) {
+  .container {
+    justify-content: flex-start;
+  }  
+}

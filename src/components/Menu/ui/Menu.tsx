@@ -1,17 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { styled, Divider, Box } from '@mui/material';
+import { MemoBox } from '@/components/MuiOptimized';
 import { Logo } from '@/components/Logo';
 import { Button } from '@/components/Button';
 import MenuIcon from './MenuIcon';
 import MenuLink from './MenuLink';
 import BurgerMenu from './BurgerMenu';
-
-const Nav = styled('nav')({
-  display: 'flex',
-  alignItems: 'center',
-});
+import styles from './Menu.module.css';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -22,20 +18,8 @@ const Menu = () => {
 
   return (
     <>
-      <Nav
-        sx={{
-          height: { xs: '62px', desktop: '103px' },
-          padding: { xs: '20px 0px 20px 0px', desktop: '30px 0px 30px 0px' },
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            width: '100%',
-            justifyContent: { xs: 'space-between', md: 'flex-start' },
-          }}
-        >
+      <div className={styles.nav}>
+        <div className={styles.container}>
           <Logo variant="header" />
           <MenuIcon
             sx={{ display: { xs: 'block', md: 'none' } }}
@@ -51,14 +35,12 @@ const Menu = () => {
               paddingLeft: { md: '50px', lg: '119px' },
             }}
           />
-        </Box>
-        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        </div>
+        <MemoBox sx={{ display: { xs: 'none', md: 'block' } }}>
           <Button variantButton="contact" />
-        </Box>
-      </Nav>
-      <Divider
-        sx={{ margin: { xs: '0 -20px', md: '0 -30px', lg: '0 -50px', desktop: '0 -60px' } }}
-      />
+        </MemoBox>
+      </div>
+      <hr className="divider" />
       {isOpen && (
         <BurgerMenu toggleDrawer={toggleDrawer} onClose={toggleDrawer(false)} open={isOpen} />
       )}

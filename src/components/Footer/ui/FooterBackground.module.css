@@ -1,0 +1,30 @@
+.footerBackground {
+  display: contents;
+  position: relative;
+  z-index: 1; 
+}
+
+.footerBackground::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(33, 33, 33, 1);
+  inset: 0;
+  z-index: -1;
+  margin: 0px -20px;
+}
+
+@media (min-width: 900px) {
+  .footerBackground::before {
+    margin: 0px -30px;
+  }
+}
+@media (min-width: 1200px) {
+  .footerBackground::before {
+    margin: 0px -50px;
+  }
+}
+@media (min-width: 1920px) {
+  .footerBackground::before {
+    margin: 0px -60px;
+  }
+}

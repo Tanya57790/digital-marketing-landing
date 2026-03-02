@@ -1,7 +1,8 @@
 'use client';
 
 import { getImageProps } from 'next/image';
-import { styled, Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoBox } from '@/components/MuiOptimized';
 import { Triangle } from '@/components/Triangle';
 
 const StyledImg = styled('img')({
@@ -14,7 +15,7 @@ const TestimonialsImage = () => {
   const {
     props: { srcSet: mobileSrcSet, ...restMobile },
   } = getImageProps({
-    src: '/assets/images/meeting_m.png',
+    src: '/assets/images/meeting_m.webp',
     width: 300,
     height: 245,
     ...common,
@@ -22,13 +23,13 @@ const TestimonialsImage = () => {
   const {
     props: { srcSet: desktopSrcSet, ...restDesktop },
   } = getImageProps({
-    src: '/assets/images/meeting_d.png',
+    src: '/assets/images/meeting_d.webp',
     width: 943,
     height: 745,
     ...common,
   });
   return (
-    <Box
+    <MemoBox
       sx={{
         position: 'relative',
         marginTop: { xs: '20px' },
@@ -37,7 +38,7 @@ const TestimonialsImage = () => {
     >
       <Triangle variantTriangle="one" />
       <Triangle variantTriangle="two" />
-      <Box
+      <MemoBox
         sx={{
           width: {
             xs: restMobile.width,
@@ -54,8 +55,8 @@ const TestimonialsImage = () => {
           <source media="(min-width: 1920px)" srcSet={desktopSrcSet} />
           <StyledImg {...restMobile} alt={common.alt} role="img" />
         </picture>
-      </Box>
-    </Box>
+      </MemoBox>
+    </MemoBox>
   );
 };
 

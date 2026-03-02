@@ -1,6 +1,6 @@
 'use client';
 
-import { styled, Divider } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { Card } from '@/components/Card';
 
 const Container = styled('div')(({ theme }) => ({
@@ -25,9 +25,7 @@ const Container = styled('div')(({ theme }) => ({
 const SubscriptionSection = () => {
   return (
     <>
-      <Divider
-        sx={{ margin: { xs: '0 -20px', md: '0 -30px', lg: '0 -50px', desktop: '0 -60px' } }}
-      />
+      <hr className="divider" />
       <Container>
         <Card variantCard="subscribe" />
       </Container>

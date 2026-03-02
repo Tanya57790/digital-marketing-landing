@@ -1,11 +1,12 @@
 'use client';
 
-import { styled, useTheme, List, ListItem, Typography } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import { MemoList, MemoListItem, MemoTypography } from '@/components/MuiOptimized';
 import { supportItems, featureItems } from './data';
 import type { CardVariantProps } from './interfaces';
 import { cardVariantsStyles } from './data';
 
-const StyledList = styled(List, {
+const StyledList = styled(MemoList, {
   shouldForwardProp: (prop) => prop !== 'variantCard',
 })<CardVariantProps>(({ theme, variantCard }) => ({
   display: 'grid',
@@ -19,7 +20,7 @@ const StyledList = styled(List, {
   },
 }));
 
-const StyledListItem = styled(ListItem)(({ theme }) => ({
+const StyledListItem = styled(MemoListItem)(({ theme }) => ({
   display: 'list-item',
   paddingTop: '0px',
   paddingBottom: '0px',
@@ -55,7 +56,7 @@ const CardList = ({ variantCard }: CardVariantProps) => {
               whiteSpace: whiteSpace,
             }}
           >
-            <Typography
+            <MemoTypography
               variant="body1"
               sx={{
                 fontWeight: variantCard === 'features' ? 300 : 400,
@@ -66,7 +67,7 @@ const CardList = ({ variantCard }: CardVariantProps) => {
               }}
             >
               {item.textItem}
-            </Typography>
+            </MemoTypography>
           </StyledListItem>
         );
       })}

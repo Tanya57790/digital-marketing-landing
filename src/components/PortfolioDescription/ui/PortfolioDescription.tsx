@@ -1,21 +1,12 @@
 'use client';
 
-import { styled, Box } from '@mui/material';
 import { Button } from '@/components/Button';
 import { PortfolioButton } from '@/components/PortfolioButton';
 import { PortfolioList } from '@/components/PortfolioList';
 import { Arrow } from '@/components/Arrow';
 import { data } from './data';
 import { useState } from 'react';
-
-const ButtonContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  width: '136px',
-  [theme.breakpoints.up('desktop')]: {
-    width: '173px',
-  },
-}));
+import styles from './PortfolioDescription.module.css';
 
 const PortfolioDescription = () => {
   const [page, setPage] = useState(1);
@@ -29,10 +20,10 @@ const PortfolioDescription = () => {
   const pageItems = data.slice(start, end);
 
   return (
-    <Box sx={{ display: 'grid', gap: '15px', width: 'max-content' }}>
+    <div className={styles.container}>
       <PortfolioList pageItems={pageItems} />
       <Button variantButton="secondary" />
-      <ButtonContainer>
+      <div className={styles.buttonContainer}>
         <PortfolioButton
           onClick={() => setPage(Math.max(1, page - 1))}
           disabled={page === 1}
@@ -47,8 +38,8 @@ const PortfolioDescription = () => {
         >
           <Arrow variantArrow="right" />
         </PortfolioButton>
-      </ButtonContainer>
-    </Box>
+      </div>
+    </div>
   );
 };
 

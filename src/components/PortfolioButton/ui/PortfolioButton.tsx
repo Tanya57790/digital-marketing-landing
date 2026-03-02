@@ -1,6 +1,6 @@
 'use client';
 
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 type ButtonType = {
   onClick: () => void;

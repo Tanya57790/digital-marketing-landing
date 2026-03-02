@@ -7,9 +7,6 @@ import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { theme } from '../src/theme';
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
-import '@fontsource/roboto-condensed/700.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/300.css';
 
 initialize();
 

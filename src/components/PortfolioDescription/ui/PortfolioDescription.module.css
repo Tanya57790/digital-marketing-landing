@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  gap: 15px; 
+  width: max-content;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 136px;
+}
+
+@media (min-width: 1920px) {
+  .buttonContainer {
+    width: 173px;
+  }  
+}

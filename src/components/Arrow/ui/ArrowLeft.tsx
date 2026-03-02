@@ -1,6 +1,6 @@
 'use client';
 
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import ArrowBaseStyles from './ArrowBaseStyles';
 
 const StyledArrowLeft = styled(ArrowBaseStyles)(({ theme }) => ({

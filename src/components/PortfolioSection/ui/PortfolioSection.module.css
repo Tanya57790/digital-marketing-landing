@@ -1,0 +1,56 @@
+.backgroundImage {
+  position: absolute;
+  top: 370px;
+  right: 40%;
+  width: 200px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: right top;
+  z-index: -1;
+  background-image: url('/assets/images/dots_d.png');
+  background-size: contain;
+  transform: rotate(30deg);
+  opacity: 0.1;
+}
+
+@media (min-width: 321px) {
+  .backgroundImage {
+    right: 20%;
+    width: 250px;
+  }  
+}
+@media (min-width: 600px) {
+  .backgroundImage {
+    top: 70px;
+    right: 12%;
+    width: 300px;
+  }  
+}
+@media (min-width: 900px) {
+  .backgroundImage {
+    top: 120px;
+    right: 10%;
+  }  
+}
+@media (min-width: 1200px) {
+  .backgroundImage {
+    top: 140px;
+    width: 600px;
+  }  
+}
+@media (min-width: 1536px) {
+  .backgroundImage {
+    top: 160px;
+    right: 4%;
+    width: 700px;
+    height: 350px;
+  }  
+}
+@media (min-width: 1920px) {
+  .backgroundImage {
+    top: 220px;
+    right: 4%;
+    width: 1000px;
+    height: 500px;
+  }  
+}

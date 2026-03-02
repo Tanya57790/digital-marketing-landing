@@ -1,7 +1,8 @@
 'use client';
 
-import { styled, SxProps, Theme, Typography } from '@mui/material';
-
+import { styled, type Theme } from '@mui/material/styles';
+import { SxProps } from '@mui/system';
+import { MemoTypography } from '@/components/MuiOptimized';
 type VariantTypography = {
   variantTypography?: 'card' | 'accent-h1' | 'accent-body1';
   className?: string;
@@ -11,7 +12,7 @@ type VariantTypography = {
 
 const fontSizes = { xs: '14px', lg: '16px', xl: '20px', desktop: '24px' };
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
+const StyledTypography = styled(MemoTypography)(({ theme }) => ({
   color: theme.palette.secondary.contrastText,
   lineHeight: '1.3',
 }));

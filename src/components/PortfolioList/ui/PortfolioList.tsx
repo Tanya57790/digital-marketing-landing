@@ -1,47 +1,17 @@
 'use client';
 
-import { styled, List, Box, Typography, ListItem } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoBox, MemoTypography } from '@/components/MuiOptimized';
 import Image from 'next/image';
-import { PageItemProps } from './interface';
+import type { PageItemProps } from './interface';
+import styles from './PortfolioList.module.css';
 
-const TypographyTitle = styled(Typography)(({ theme }) => ({
+const TypographyTitle = styled(MemoTypography)(({ theme }) => ({
   color: theme.palette.primary.main,
   fontWeight: 700,
 }));
 
-const StyledItem = styled(ListItem)(({ theme }) => ({
-  display: 'grid',
-  justifyContent: 'start',
-  alignItems: 'start',
-  gridTemplateColumns: '80px 170px',
-  paddingLeft: '0px',
-  paddingRight: '0px',
-  [theme.breakpoints.up('md')]: {
-    gridTemplateColumns: '100px 230px',
-  },
-  [theme.breakpoints.up('lg')]: {
-    gridTemplateColumns: '120px 320px',
-  },
-  [theme.breakpoints.up('xl')]: {
-    gridTemplateColumns: '130px 310px',
-  },
-  [theme.breakpoints.up('desktop')]: {
-    gridTemplateColumns: '130px max-content',
-  },
-  '& > p': {
-    [theme.breakpoints.up('md')]: {
-      fontSize: '18px',
-    },
-    [theme.breakpoints.up('xl')]: {
-      fontSize: '20px',
-    },
-    [theme.breakpoints.up('desktop')]: {
-      fontSize: '24px',
-    },
-  },
-}));
-
-const TypographyItem = styled(Typography)({
+const TypographyItem = styled(MemoTypography)({
   fontWeight: 400,
 });
 
@@ -49,8 +19,8 @@ const PortfolioList = ({ pageItems }: PageItemProps) => {
   return (
     <>
       {pageItems.map((item) => (
-        <Box key={item.id} sx={{ display: 'flex', gap: '15px', flexDirection: 'column' }}>
-          <Box
+        <MemoBox key={item.id} sx={{ display: 'flex', gap: '15px', flexDirection: 'column' }}>
+          <MemoBox
             sx={{
               position: 'relative',
               height: item.sizeHeight,
@@ -58,30 +28,30 @@ const PortfolioList = ({ pageItems }: PageItemProps) => {
             }}
           >
             <Image src={item.src} fill sizes="100vw" role="img" alt={item.company + ' image'} />
-          </Box>
-          <List>
-            <StyledItem>
+          </MemoBox>
+          <ul className={styles.list}>
+            <li className={styles.item}>
               <TypographyTitle variant="body1">Result:</TypographyTitle>
               <TypographyItem variant="body1">{item.result}</TypographyItem>
-            </StyledItem>
-            <StyledItem>
+            </li>
+            <li className={styles.item}>
               <TypographyTitle variant="body1">Type:</TypographyTitle>
               <TypographyItem variant="body1">{item.type}</TypographyItem>
-            </StyledItem>
-            <StyledItem>
+            </li>
+            <li className={styles.item}>
               <TypographyTitle variant="body1">Company:</TypographyTitle>
               <TypographyItem variant="body1">{item.company}</TypographyItem>
-            </StyledItem>
-            <StyledItem>
+            </li>
+            <li className={styles.item}>
               <TypographyTitle variant="body1">Product:</TypographyTitle>
               <TypographyItem variant="body1">{item.product}</TypographyItem>
-            </StyledItem>
-            <StyledItem>
+            </li>
+            <li className={styles.item}>
               <TypographyTitle variant="body1">Platform:</TypographyTitle>
               <TypographyItem variant="body1">{item.platform}</TypographyItem>
-            </StyledItem>
-          </List>
-        </Box>
+            </li>
+          </ul>
+        </MemoBox>
       ))}
     </>
   );

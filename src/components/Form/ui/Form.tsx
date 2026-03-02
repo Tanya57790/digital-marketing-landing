@@ -1,11 +1,12 @@
 'use client';
 
-import { Box, styled, useTheme, Typography } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import { MemoBox, MemoTypography } from '@/components/MuiOptimized';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { schema, type InferSchema } from '@/lib/subscribe-schema';
 import { addSubscriber } from '@/lib/addSubscriber';
-import { Input } from '@/components/Input';
+import { StyledInput } from './FormInput';
 import { Button } from '@/components/Button';
 
 const responsiveSizes = { xs: '12px', md: '14x', xl: '18px', desktop: '20px' };
@@ -38,7 +39,13 @@ const Form = () => {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<InferSchema>({ resolver: zodResolver(schema) });
+  } = useForm<InferSchema>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      email: '',
+    },
+    mode: 'onBlur',
+  });
 
   const onSubmit: SubmitHandler<InferSchema> = async (data) => {
     const result = await addSubscriber(data);
@@ -49,7 +56,7 @@ const Form = () => {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <Typography
+        <MemoTypography
           variant="h2"
           sx={{
             color: theme.palette.secondary.contrastText,
@@ -60,11 +67,18 @@ const Form = () => {
           }}
         >
           {'Subscribe to our\nnewsletters'}
-        </Typography>
-        <Box display="flex" paddingBottom="10px">
-          <Input {...register('email')} />
+        </MemoTypography>
+        <MemoBox display="flex" paddingBottom="10px">
+          <StyledInput
+            {...register('email')}
+            id="email"
+            placeholder="Your Email"
+            type="email"
+            max-length="320"
+            autoComplete="email"
+          />
           <Button variantButton="submit" disabled={isSubmitting} />
-        </Box>
+        </MemoBox>
         {errors.email && (
           <ErrorMessage sx={{ fontSize: responsiveSizes }}>{errors.email.message}</ErrorMessage>
         )}

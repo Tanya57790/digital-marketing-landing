@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { styled, useTheme, Drawer } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import { MemoDrawer } from '@/components/MuiOptimized';
 import MenuIcon from './MenuIcon';
 import MenuLink from './MenuLink';
 
@@ -11,7 +12,7 @@ interface MenuProps {
   open: boolean;
 }
 
-const StyledDrawer = styled(Drawer)(({ theme }) => ({
+const StyledDrawer = styled(MemoDrawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
     width: '260px',
     display: 'flex',

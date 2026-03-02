@@ -1,0 +1,30 @@
+.trustedByContainer {
+  position: relative;
+  margin-top: 39px;
+}
+
+@media (min-width: 600px) {
+  .trustedByContainer {
+    margin-top: 60px;
+  }  
+}
+@media (min-width: 900px) {
+  .trustedByContainer {
+    margin-top: 215px;
+  }  
+}
+@media (min-width: 1200px) {
+  .trustedByContainer {
+     margin-top: 181px;
+  }  
+}
+@media (min-width: 1536px) {
+  .trustedByContainer {
+    margin-top: 264px;
+  }  
+}
+@media (min-width: 1920px) {
+  .trustedByContainer {
+    margin-top: 150px;
+  }  
+}

@@ -29,7 +29,7 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontFamily: '"Roboto Condensed", "Arial", sans-serif',
+      fontFamily: 'var(--font-roboto-condensed), "Arial", sans-serif',
       fontSize: '1.75rem',
       fontWeight: 700,
       lineHeight: '100%',
@@ -37,7 +37,7 @@ const theme = createTheme({
       textTransform: 'uppercase',
     },
     h2: {
-      fontFamily: '"Roboto Condensed", "Arial", sans-serif',
+      fontFamily: 'var(--font-roboto-condensed), "Arial", sans-serif',
       fontSize: '1.25rem',
       fontWeight: 700,
       lineHeight: '100%',
@@ -45,13 +45,13 @@ const theme = createTheme({
       textTransform: 'uppercase',
     },
     body1: {
-      fontFamily: '"Roboto", "Arial", sans-serif',
+      fontFamily: 'var(--font-roboto), "Arial", sans-serif',
       fontSize: '0.875rem',
       letterSpacing: 0,
       textTransform: 'none',
     },
     button: {
-      fontFamily: '"Roboto", "Arial", sans-serif',
+      fontFamily: 'var(--font-roboto), "Arial", sans-serif',
       fontWeight: 500,
       lineHeight: '100%',
       letterSpacing: 0,

@@ -1,11 +1,12 @@
 'use client';
 
-import { styled, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoTypography } from '@/components/MuiOptimized';
 import { titles } from './data';
 import CardTypography from './CardTypography';
 import type { CardVariantProps, ResponsiveProps } from './interfaces';
 
-const StyledTypography = styled(Typography, {
+const StyledTypography = styled(MemoTypography, {
   shouldForwardProp: (prop) => prop !== 'responsiveWidth',
 })<ResponsiveProps>(({ theme, responsiveWidth }) => ({
   lineHeight: '115%',
@@ -56,7 +57,7 @@ const CardTitle = ({ variantCard }: CardVariantProps) => {
         {' ' + lastPart}
       </StyledTypography>
       {variantCard === 'subscribe' && (
-        <Typography
+        <MemoTypography
           variant="body1"
           sx={{
             margin: { xs: '10px 0 17px 3px', desktop: '28px -8px 0 -2px' },
@@ -64,7 +65,7 @@ const CardTitle = ({ variantCard }: CardVariantProps) => {
           }}
         >
           <CardTypography variantTypography="accent-body1">{subtitle}</CardTypography>
-        </Typography>
+        </MemoTypography>
       )}
     </>
   );

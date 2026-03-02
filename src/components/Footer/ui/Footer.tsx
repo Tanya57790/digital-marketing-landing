@@ -1,23 +1,13 @@
 'use client';
 
-import { styled, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoTypography } from '@/components/MuiOptimized';
 import { Logo } from '@/components/Logo';
 import { Icon } from '@/components/Icon';
 import { linkItems } from './data';
 import FooterContainer from './FooterContainer';
 import FooterBackground from './FooterBackground';
-
-const StyledFooter = styled('footer')(({ theme }) => ({
-  position: 'relative',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '40px 0px',
-  [theme.breakpoints.up('md')]: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-}));
+import styles from './Footer.module.css';
 
 const Link = styled('a')(({ theme }) => ({
   fontWeight: 300,
@@ -36,20 +26,20 @@ const Link = styled('a')(({ theme }) => ({
 
 const Footer = () => {
   return (
-    <StyledFooter>
+    <footer className={styles.footer}>
       <FooterBackground />
       <FooterContainer variant="flex">
         <Logo variant="footer" />
         <FooterContainer variant="grid">
           {linkItems.map((item) => (
             <Link key={item.id} href={item.href}>
-              <Typography>{item.text}</Typography>
+              <MemoTypography>{item.text}</MemoTypography>
             </Link>
           ))}
         </FooterContainer>
       </FooterContainer>
       <Icon variant="footer" />
-    </StyledFooter>
+    </footer>
   );
 };
 

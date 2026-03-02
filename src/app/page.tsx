@@ -1,10 +1,10 @@
-import { Logo } from '@/components/Logo';
+import { Sections } from '@/components/Sections';
 
 const HomePage = () => {
   return (
-    <header>
-      <Logo variant="header" />
-    </header>
+    <>
+      <Sections />
+    </>
   );
 };
 

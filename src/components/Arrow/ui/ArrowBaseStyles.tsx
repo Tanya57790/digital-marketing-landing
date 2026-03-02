@@ -1,6 +1,6 @@
 'use client';
 
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 const ArrowBaseStyles = styled('span')(({ theme }) => ({
   border: `2px solid ${theme.palette.primary.main}`,

@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { styled, SxProps, Theme, Typography, ListItem, List, Divider } from '@mui/material';
+import { styled, SxProps, Theme } from '@mui/material/styles';
+import { MemoList, MemoListItem, MemoTypography } from '@/components/MuiOptimized';
 import { menuItem } from './data';
 
 interface MenuLinkProps {
@@ -23,16 +24,16 @@ const StyledLink = styled(Link)(({ theme }) => ({
 
 const MenuLink = ({ spacingItem, sx, variant }: MenuLinkProps) => {
   const items = variant === 'desktopLink' ? menuItem.filter((item) => item.id !== 4) : menuItem;
-  const divider = variant === 'mobileLink' ? <Divider /> : '';
+  const divider = variant === 'mobileLink' ? <hr className="divider" /> : '';
 
   return (
-    <List sx={sx}>
+    <MemoList sx={sx}>
       {divider}
       {items.map((item) => {
         return (
-          <ListItem key={item.id} sx={{ padding: spacingItem, width: 'auto' }}>
+          <MemoListItem key={item.id} sx={{ padding: spacingItem, width: 'auto' }}>
             <StyledLink href="#">
-              <Typography
+              <MemoTypography
                 variant="body1"
                 sx={{
                   fontSize: { xs: '14px', md: '16px', xl: '20px' },
@@ -40,13 +41,13 @@ const MenuLink = ({ spacingItem, sx, variant }: MenuLinkProps) => {
                 }}
               >
                 {item.name}
-              </Typography>
+              </MemoTypography>
               {divider}
             </StyledLink>
-          </ListItem>
+          </MemoListItem>
         );
       })}
-    </List>
+    </MemoList>
   );
 };
 

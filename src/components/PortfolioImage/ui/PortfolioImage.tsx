@@ -1,7 +1,8 @@
 'use client';
 
 import { getImageProps } from 'next/image';
-import { styled, Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoBox } from '@/components/MuiOptimized';
 
 const StyledImg = styled('img')({
   width: '100%',
@@ -13,7 +14,7 @@ const PortfolioImage = () => {
   const {
     props: { srcSet: mobileSrcSet, ...restMobile },
   } = getImageProps({
-    src: '/assets/images/commercial-cards_m.png',
+    src: '/assets/images/commercial-cards_m.webp',
     width: 280,
     height: 258,
     ...common,
@@ -21,7 +22,7 @@ const PortfolioImage = () => {
   const {
     props: { srcSet: tabletSrcSet, ...restTablet },
   } = getImageProps({
-    src: '/assets/images/commercial-cards_t.png',
+    src: '/assets/images/commercial-cards_t.webp',
     width: 487,
     height: 448,
     ...common,
@@ -29,7 +30,7 @@ const PortfolioImage = () => {
   const {
     props: { srcSet: laptopSrcSet, ...restLaptop },
   } = getImageProps({
-    src: '/assets/images/commercial-cards_l.png',
+    src: '/assets/images/commercial-cards_l.webp',
     width: 600,
     height: 552,
     ...common,
@@ -37,13 +38,13 @@ const PortfolioImage = () => {
   const {
     props: { srcSet: desktopSrcSet, ...restDesktop },
   } = getImageProps({
-    src: '/assets/images/commercial-cards_d.png',
+    src: '/assets/images/commercial-cards_d.webp',
     width: 887,
     height: 815,
     ...common,
   });
   return (
-    <Box
+    <MemoBox
       sx={{
         width: {
           xs: restMobile.width,
@@ -60,7 +61,7 @@ const PortfolioImage = () => {
         <source media="(min-width: 1920px)" srcSet={desktopSrcSet} />
         <StyledImg {...restMobile} alt={common.alt} role="img" />
       </picture>
-    </Box>
+    </MemoBox>
   );
 };
 

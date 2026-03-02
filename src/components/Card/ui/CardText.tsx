@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { styled, Box, Divider } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoBox, MemoDivider } from '@/components/MuiOptimized';
 import { featuresText, subscribeText } from './data';
 import CardTypography from './CardTypography';
 import type { CardVariantProps } from './interfaces';
 import { Form } from '@/components/Form';
 import { cardVariantsStyles } from './data';
 
-const StyledDivider = styled(Divider)(({ theme }) => ({
+const StyledDivider = styled(MemoDivider)(({ theme }) => ({
   borderColor: theme.palette.secondary.contrastText,
   borderWidth: '1px',
 }));
@@ -19,7 +20,7 @@ const CardText = ({ variantCard }: CardVariantProps) => {
     cardVariantsStyles[variantCard];
 
   return (
-    <Box
+    <MemoBox
       sx={{
         display: 'flex',
         flexDirection: textDirection ?? '',
@@ -44,7 +45,7 @@ const CardText = ({ variantCard }: CardVariantProps) => {
           );
         })}
       {variantCard === 'subscribe' && (
-        <Box
+        <MemoBox
           sx={{
             display: 'grid',
             gap: { xs: '14px', desktop: '30px' },
@@ -63,9 +64,9 @@ const CardText = ({ variantCard }: CardVariantProps) => {
             {accent}
           </CardTypography>
           <Form />
-        </Box>
+        </MemoBox>
       )}
-    </Box>
+    </MemoBox>
   );
 };
 

@@ -1,6 +1,7 @@
 'use client';
 
-import { styled, Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoBox } from '@/components/MuiOptimized';
 
 const Rectangle = styled('span')(({ theme }) => ({
   borderStyle: 'solid',
@@ -16,16 +17,16 @@ const Triangle = styled('span')(({ theme }) => ({
 
 const Quote = () => {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', width: { xs: '56px' } }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <MemoBox sx={{ display: 'flex', justifyContent: 'space-between', width: { xs: '56px' } }}>
+      <MemoBox sx={{ display: 'flex', flexDirection: 'column' }}>
         <Rectangle />
         <Triangle />
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      </MemoBox>
+      <MemoBox sx={{ display: 'flex', flexDirection: 'column' }}>
         <Rectangle />
         <Triangle />
-      </Box>
-    </Box>
+      </MemoBox>
+    </MemoBox>
   );
 };
 

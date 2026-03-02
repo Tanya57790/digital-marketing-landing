@@ -1,0 +1,55 @@
+.imageContainer {
+  position: absolute;
+  right: 0;
+  width: 165px;
+  height: 256px;
+  z-index: -1;
+  margin-left: -20px;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .imageContainer {
+    height: 350px;
+    width: 365px;
+  }
+}
+@media (min-width: 900px) {
+  .imageContainer {
+    height: 608px;
+    width: 647px;
+    margin-left: -30px;
+  }
+}
+@media (min-width: 1200px) {
+  .imageContainer {
+    margin-left: -50px;
+  }
+}
+@media (min-width: 1536px) {
+  .imageContainer {
+    height: 720px;
+    width: 747px;
+  }
+}
+@media (min-width: 1920px) {
+  .imageContainer {
+    height: 747px;
+    margin-left: -60px;
+  }
+}
+
+.heroTypography {
+  letter-spacing: -0.1px;
+  width: 185px;
+}
+
+@media (min-width: 600px) {
+  .heroTypography {
+    width: 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .heroTypography {
+    letter-spacing: -0.2px;
+  }
+}

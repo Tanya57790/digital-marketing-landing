@@ -1,6 +1,7 @@
 'use client';
 
-import { Button as BaseButton, Typography, styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { MemoButton, MemoTypography } from '@/components/MuiOptimized';
 import { ButtonVariant } from './interfaces';
 import { buttonsData } from './data';
 
@@ -10,7 +11,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const StyledButton = styled(BaseButton, {
+const StyledButton = styled(MemoButton, {
   shouldForwardProp: (prop) => prop !== 'variantButton',
 })<ButtonProps>(({ variantButton, theme }) => ({
   background: variantButton === 'secondary' ? 'transparent' : theme.palette.primary.main,
@@ -62,14 +63,14 @@ const Button = ({ variantButton, size, disabled }: ButtonProps) => {
         },
       }}
     >
-      <Typography
+      <MemoTypography
         variant="button"
         sx={{
           fontSize: { xs: mobile.fontSize, desktop: desktop.fontSize },
         }}
       >
         {title}
-      </Typography>
+      </MemoTypography>
     </StyledButton>
   );
 };
