@@ -18,7 +18,7 @@ const Menu = () => {
 
   return (
     <>
-      <div className={styles.nav}>
+      <nav className={styles.nav}>
         <div className={styles.container}>
           <Logo variant="header" />
           <MenuIcon
@@ -39,7 +39,7 @@ const Menu = () => {
         <MemoBox sx={{ display: { xs: 'none', md: 'block' } }}>
           <Button variantButton="contact" />
         </MemoBox>
-      </div>
+      </nav>
       <hr className="divider" />
       {isOpen && (
         <BurgerMenu toggleDrawer={toggleDrawer} onClose={toggleDrawer(false)} open={isOpen} />
