@@ -32,7 +32,7 @@ const MenuLink = ({ spacingItem, sx, variant }: MenuLinkProps) => {
       {items.map((item) => {
         return (
           <MemoListItem key={item.id} sx={{ padding: spacingItem, width: 'auto' }}>
-            <StyledLink href="#">
+            <StyledLink href={item.href}>
               <MemoTypography
                 variant="body1"
                 sx={{
