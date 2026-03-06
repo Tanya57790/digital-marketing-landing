@@ -8,6 +8,7 @@ import styles from './PortfolioSection.module.css';
 const PortfolioSection = () => {
   return (
     <MemoBox
+      id="portfolio"
       sx={{
         position: 'relative',
         marginTop: {

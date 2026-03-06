@@ -6,7 +6,7 @@ import styles from './FeaturesSection.module.css';
 
 const FeaturesSection = () => {
   return (
-    <MemoBox>
+    <MemoBox id="audit">
       <div className={styles.backgroundImage} />
       <Card variantCard="features" />
     </MemoBox>

@@ -6,7 +6,7 @@ import styles from './SupportSection.module.css';
 
 const SupportSection = () => {
   return (
-    <MemoBox>
+    <MemoBox id="services">
       <div className={styles.backgroundImage} />
       <Card variantCard="support" />
     </MemoBox>
