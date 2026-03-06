@@ -22,6 +22,12 @@ const Link = styled('a')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     fontSize: '24px',
   },
+  '&:hover': {
+    color: theme.palette.primary.main,
+  },
+  '&:active': {
+    color: '#c82b36',
+  },
 }));
 
 const Footer = () => {
