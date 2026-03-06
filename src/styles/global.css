@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .divider {
   margin: 0 -20px;
   border-width: 0;
