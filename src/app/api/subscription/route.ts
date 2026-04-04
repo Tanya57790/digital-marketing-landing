@@ -16,8 +16,20 @@ export async function POST(request: NextRequest) {
       where: { email: email },
     });
 
+    await new Promise((resolve, reject) => {
+      transporter.verify((error, success) => {
+        if (error) {
+          console.error('SMTP verify failed:', error);
+          reject(error);
+        } else {
+          console.log('SMTP ready');
+          resolve(success);
+        }
+      });
+    });
+
     if (user && !user.messageSent) {
-      await transporter.sendMail({
+      const mailData = {
         from: `"${process.env.SENDER_NAME}" <${process.env.EMAIL_USER}>`,
         to: email,
         subject: 'Welcome!',
@@ -44,6 +56,18 @@ export async function POST(request: NextRequest) {
           Unsubscribe from the newsletter
         </a>
       `,
+      };
+
+      await new Promise((resolve, reject) => {
+        transporter.sendMail(mailData, (err, info) => {
+          if (err) {
+            console.error('SendMail error:', err);
+            reject(err);
+          } else {
+            console.log('Email sent:', info.messageId);
+            resolve(info);
+          }
+        });
       });
 
       await prisma.subscriber.update({
