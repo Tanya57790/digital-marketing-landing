@@ -1,0 +1,46 @@
+.conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.gap-container {
+  display: grid;
+  gap: 10px;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: var(--mui-palette-primary-main);
+  color: var(--mui-palette-secondary-contrastText);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 133px;
+  height: 36px;
+  padding: 0px;
+  text-decoration: none; 
+  transition: background-color 0.3s;
+}
+
+.link:hover {
+  background-color: #e3303c;
+}
+  
+.link:active {
+  background-color: #cf2d38;
+}
+
+@media (min-width: 1920px) {
+  .link {
+    width: 170px;
+    height: 43px;
+  }  
+}
