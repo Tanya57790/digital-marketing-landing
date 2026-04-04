@@ -74,6 +74,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           as="image"
           fetchPriority="high"
         />
+        <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" sizes="192x192" href="/favicon/favicon-192x192.png" type="image/png" />
+        <link rel="icon" sizes="96x96" href="/favicon/favicon-96x96.png" type="image/png" />
+        <link rel="icon" sizes="48x48" href="/favicon/favicon-48x48.png" type="image/png" />
+        <link rel="icon" sizes="32x32" href="/favicon/favicon-32x32.png" type="image/png" />
       </head>
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: false }}>
