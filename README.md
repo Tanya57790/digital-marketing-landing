@@ -46,6 +46,13 @@ The field with a unique JWT token, important for authentication and security, is
   <img width="315" height="508" alt="Screenshot_unsub-m" src="https://github.com/user-attachments/assets/7e0bc772-2a70-44eb-84b5-a7ddac46acfa" />
 </p>
 
+## What problems did I encounter?
+- Using too atomic commits for a simple project. For convenience, it's better to maintain branches and use `git squash` to merge similar commits.
+- Nodemailer doesn't work in Vercel. Ready-made solutions didn't work, so the site's API currently only works locally, and a migration to a paid email service is planned for stable operation.
+- Incorrect use of Mui components. Development took longer than necessary due to a lack of Mui optimizations and subsequent support for the perf branch.
+
+I gradually resolved the issues with practice. This was my first project with such a large set of tools after HTML and CSS.
+
 ## Setup
 
 1. Go to the folder where you want to store the project.
