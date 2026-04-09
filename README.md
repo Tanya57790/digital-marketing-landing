@@ -46,13 +46,6 @@ The field with a unique JWT token, important for authentication and security, is
   <img width="315" height="508" alt="Screenshot_unsub-m" src="https://github.com/user-attachments/assets/7e0bc772-2a70-44eb-84b5-a7ddac46acfa" />
 </p>
 
-## What problems did I encounter?
-- Using too atomic commits for a simple project. For convenience, it's better to maintain branches and use `git squash` to merge similar commits.
-- Nodemailer doesn't work in Vercel. Ready-made solutions didn't work, so the site's API currently only works locally, and a migration to a paid email service is planned for stable operation.
-- Incorrect use of Mui components. Development took longer than necessary due to a lack of Mui optimizations and subsequent support for the perf branch.
-
-I gradually resolved the issues with practice. This was my first project with such a large set of tools after HTML and CSS.
-
 ## Setup
 
 1. Go to the folder where you want to store the project.
@@ -99,18 +92,25 @@ bun build:start
 
 ## Link to the layout
 
-```bash
+```
 https://www.figma.com/design/4CcDJGIWSqQZT21849B0Tk/%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3?node-id=0-1&p=f&t=whoj0PDIK6sbP1W6-0
 ```
 If you want practice your skills.
 
+## What problems did I encounter?
+:heavy_multiplication_x: Using too atomic commits for a simple project. For convenience, it's better to maintain branches and use `git squash` to merge similar commits.    
+:heavy_multiplication_x: Nodemailer doesn't work in Vercel. Ready-made solutions didn't work, so the site's API currently only works locally, and a migration to a paid email service is planned for stable operation.    
+:heavy_multiplication_x: Incorrect use of Mui components. Development took longer than necessary due to a lack of Mui optimizations and subsequent support for the perf branch.    
+
+I gradually resolved the issues with practice. This was my first project with such a large set of tools after HTML and CSS.
+
 ## Features
-- Interactive Storybook component testing and visualization
-- Email newsletters via Nodemailer
-- JWT unsubscribe page (secure token verification)
-- Form validation using Zod
-- Mobile-first responsive design
-- TypeScript typing
+:heavy_check_mark: Interactive Storybook component testing and visualization    
+:heavy_check_mark: Email newsletters via Nodemailer    
+:heavy_check_mark: JWT unsubscribe page (secure token verification)    
+:heavy_check_mark: Form validation using Zod    
+:heavy_check_mark: Mobile-first responsive design    
+:heavy_check_mark: TypeScript typing    
 
 
 ## Author
